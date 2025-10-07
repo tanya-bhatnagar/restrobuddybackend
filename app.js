@@ -43,9 +43,10 @@ app.use('/restaurantpictures',restaurantpicturesRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-app.get('/', (req, res) => {
-  res.send("Backend is running!");
+app.get('/test', (req, res) => {
+  res.json({ message: "Backend is running and connected to database!" });
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
